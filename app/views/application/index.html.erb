@@ -1,3 +1,30 @@
 index.html.erb
+<!--
 <div ng-controller="JoinCtrl">
+	{{realtimeStatus}}
+	        <tr ng-repeat="message in messages" cool-fade>
+                <td><b>{{newMessage.username}} 
+                	<br> said:</b>
+                {{newMessage.text}}</td>
+            </tr>
+            <br>
+            Username: <input type="text" name="username" ng-model="newMessage.username"/>
+            <br>
+            Message: <input type="text" name="text" ng-model="newMessage.text"/> 
+            <button type="submit" ng-click="publish()">Send</button>
+</div> -->
+
+<div class="container" ng-controller="JoinCtrl">
+	<h4>Online Users</h4>
+		<ul>
+			<li ng-repeat="user in users">{{user}}</li>
+		</ul>
+	<h4>Chat History {{messages.length}}</h4>
+	<form ng-submit='publish()'>
+		<input type="text" ng-model='newMessage' />
+		<input type="submit" value="Send" />
+	</form>
+	<div class="well">
+		<ul><li ng-repeat="message in messages">{{message}}</li></ul>
+	</div>
 </div>
