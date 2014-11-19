@@ -10,4 +10,10 @@ angular.module('myChat', ['ui.router', 'pubnub.angular.service'])
 		message: $scope.newMessage
 		});
 	};
+	$scope.subscribe = function() {
+		PubNub.ngSubscribe({ channel: theChannel })
+		$rootScope.$on(PubNub.ngMsgEv(theChannel), function(event, payload) {
+		console.log('got a message event:', payload);
+		})
+	};
 })
