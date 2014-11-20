@@ -2,7 +2,7 @@ angular.module('myChat', ['ui.router', 'pubnub.angular.service'])
 .config(function($stateProvider, $urlRouterProvider){
 
 })
-.controller('JoinCtrl', function($rootScope, $scope, $location, PubNub){
+.controller('JoinCtrl', ['$rootScope','$scope', '$location', 'PubNub', function($rootScope, $scope, $location, PubNub){
 	console.log('stuff');
 	if (!$rootScope.initialized) {
 
@@ -56,4 +56,4 @@ angular.module('myChat', ['ui.router', 'pubnub.angular.service'])
   //   count: 500
   // });
 console.log($scope.channel);
-});
+}]);
