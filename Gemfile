@@ -4,6 +4,8 @@ gem 'factory_girl_rails'
 
 gem 'bower-rails'
 
+gem 'pubnub'
+
 group :production do
 
   #gem for heroku to handle assets
