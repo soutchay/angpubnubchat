@@ -10,6 +10,7 @@ angular.module('myChat', ['ui.router', 'pubnub.angular.service'])
 	    PubNub.init({
 	      subscribe_key: 'sub-c-afabf17c-6a18-11e4-b944-02ee2ddab7fe',
 	      publish_key: 'pub-c-28c48402-cc66-488a-bb47-accd95f3900c',
+        ssl: true,
 	      uuid:$scope.userId
 		});
     $rootScope.initialized = true;
