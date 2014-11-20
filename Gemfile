@@ -4,6 +4,13 @@ gem 'factory_girl_rails'
 
 gem 'bower-rails'
 
+group :production do
+
+  #gem for heroku to handle assets
+  gem 'rails_12factor', '0.0.2'
+
+end
+
 group :development, :test do
 
   #add in the gem for rspec
